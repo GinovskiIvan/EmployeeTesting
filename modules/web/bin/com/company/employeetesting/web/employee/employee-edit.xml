@@ -1,32 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://editorCaption"
         class="com.company.employeetesting.web.employee.EmployeeEdit"
         datasource="employeeDs"
         focusComponent="fieldGroup"
         messagesPack="com.company.employeetesting.web.employee">
-        
     <dsContext>
         <datasource id="employeeDs"
                     class="com.company.employeetesting.entity.Employee"
-                    view="_local"/>
+                    view="employee-edit"/>
     </dsContext>
-    
     <dialogMode height="600"
                 width="800"/>
     <layout expand="windowActions"
             spacing="true">
-            
         <fieldGroup id="fieldGroup"
                     datasource="employeeDs">
             <column width="250px">
                 <field property="name"/>
-                <field property="imageFile" view="_local"/>
             </column>
         </fieldGroup>
+        <groupBox caption="Photo"
+                  expand="image"
+                  height="250px"
+                  spacing="true"
+                  width="250px">
+            <image id="image"
+                   align="MIDDLE_CENTER"
+                   scaleMode="CONTAIN"
+                   width="100%"/>
+            <hbox align="BOTTOM_LEFT"
+                  spacing="true">
+                <upload id="uploadField"/>
+                <button id="downloadImageBtn"
+                        caption="Download"
+                        invoke="onDownloadImageBtnClick"/>
+                <button id="clearImageBtn"
+                        caption="Clear"
+                        invoke="onClearImageBtnClick"/>
+            </hbox>
+        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>
-    
 </window>

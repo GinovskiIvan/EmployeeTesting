@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
-
+    <view class="com.company.employeetesting.entity.Employee"
+              name="employee-edit"
+              extends="_local">
+             <property name="name"/>
+             <property name="imageFile"
+                       view="_local">
+             </property>
+     </view>
 </views>

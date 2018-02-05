@@ -8,7 +8,8 @@
     <dsContext>
         <groupDatasource id="employeesDs"
                          class="com.company.employeetesting.entity.Employee"
-                         view="_local">
+                         loadDynamicAttributes="true"
+                         view="employee-edit">
             <query>
                 <![CDATA[select e from employeetesting$Employee e]]>
             </query>
